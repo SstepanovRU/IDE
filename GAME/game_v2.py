@@ -88,17 +88,13 @@ def score_game(random_predict) -> int:
 
     for number in random_array:
         count_ls.append(random_predict(number))
-
     score = int(np.mean(count_ls))
     print(f"Ваш алгоритм угадывает число в среднем за: {score} попытки")
 
 
 #Run benchmarking to score effectiveness of all algorithms
-print('Run benchmarking for random_predict: ', end='')
-score_game(random_predict)
 
-print('Run benchmarking for game_core_v2: ', end='')
-score_game(game_core_v2)
-
-print('Run benchmarking for game_core_v3: ', end='')
-score_game(game_core_v3)
+if __name__ == '__main__':
+    score_game(random_predict)
+    score_game(game_core_v2)
+    score_game(game_core_v3)
